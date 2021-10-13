@@ -6,4 +6,21 @@
 
 <ion-content>
 
+  <div class="formulario">
+    <h1 style="text-align: center;">TeLlevoAPP</h1>
+    <form [formGroup]="persona" (ngSubmit)="ingrsar()">
+      <ion-item class="usuario">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input formControllerName="usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControllerName="contraseña"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit">Ingresar</ion-button>
+
+      <a href="">Olvidé mi contraseña</a>
+    </form>
+  </div>
 </ion-content>
