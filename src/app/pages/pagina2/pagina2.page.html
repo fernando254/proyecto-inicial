@@ -4,16 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-content>
-  <h1 style="text-align: center;">¿Olvidó su contraseña?</h1>
-  <div>
-    <ion-item class="usuario">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-</ion-content>
+<div class="formulario" style="margin-bottom: 50%; background-color: white;">
+    <h1 style="text-align: center;">TeLlevoAPP</h1>
+    <form [formGroup]="persona" >
+
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="elNombre"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="contraseña"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" color="primary" expand="block" routerLink="/home">Iniciar sesión</ion-button>
+      <ion-button color="secondary" expand="block" routerLink="/home">Volver</ion-button>
+
+    </form>
+  </div>

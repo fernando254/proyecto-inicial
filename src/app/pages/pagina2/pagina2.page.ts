@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pagina2',
@@ -11,5 +12,14 @@ export class Pagina2Page implements OnInit {
 
   ngOnInit() {
   }
+
+  elNombre = new FormControl('');
+  contraseña = new FormControl('');
+
+  persona = new FormGroup({
+    elNombre : new FormControl(''),
+    contraseña : new FormControl('')
+
+  })
 
 }

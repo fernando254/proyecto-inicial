@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pagina3</ion-title>
+    <ion-title>Obtener codigo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+<h1 style="text-align: center;">TeLlevoAPP</h1>
+
+<ion-card *ngIf="qrData" style="float: left;">
+    <ngx-qrcode [elementType]="elementType" [value]="qrData"></ngx-qrcode>
+    <ion-input type="text" placeholder="Ingrese direccion" [(ngModel)]="qrData"></ion-input>
+  </ion-card>
+
+  <ion-button color="secondary" expand="block" routerLink="/home">Volver</ion-button>
 
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pagina1</ion-title>
+    <ion-title>Registrate</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,19 +8,31 @@
 
   <div class="formulario">
     <h1 style="text-align: center;">TeLlevoAPP</h1>
-    <form [formGroup]="persona" (ngSubmit)="ingrsar()">
-      <ion-item class="usuario">
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input formControllerName="usuario"></ion-input>
+    <form [formGroup]="persona" (ngSubmit)="registrar()">
+      <ion-item>
+        <ion-label position="floating">Rut</ion-label>
+        <ion-input formControlName="elRut"></ion-input>
       </ion-item>
+
+      
+
+
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="elNombre"></ion-input>
+      </ion-item>
+      
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input formControllerName="contraseña"></ion-input>
+        <ion-input formControlName="contraseña"></ion-input>
       </ion-item>
+      
+      <ion-button type="submit" color="primary" expand="block" [disabled]="!persona.valid">Registrar</ion-button>
+      <ion-button color="secondary" expand="block" routerLink="/home">Volver</ion-button>
 
-      <ion-button expand="full" type="submit">Ingresar</ion-button>
 
-      <a href="">Olvidé mi contraseña</a>
+      <p style="text-align: center;">Al registrar aceptas nuestras condiciones de uso y politicas de privacidad.</p>
+
     </form>
   </div>
 </ion-content>
