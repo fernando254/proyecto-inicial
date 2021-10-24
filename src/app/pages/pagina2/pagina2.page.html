@@ -1,25 +1,40 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>pagina2</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home"></ion-button>
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/pagina1">Crear Cuenta</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<div class="formulario" style="margin-bottom: 50%; background-color: white;">
-    <h1 style="text-align: center;">TeLlevoAPP</h1>
-    <form [formGroup]="persona" >
+<ion-content>
 
+<div id="header">
+    <img src="assets/logo.png"/>
+    <h1>Inicio de Seción</h1>
+  </div>
+
+  <br>
+
+  <div class="formulario">
+    <form [formGroup]="persona" (ngSubmit)="ingresar()">
       <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input formControlName="elNombre"></ion-input>
+        <ion-label position="floating">Rut:</ion-label>
+        <ion-input formControlName="elRut"></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
+        <ion-label position="floating">Contraseña:</ion-label>
         <ion-input formControlName="contraseña"></ion-input>
       </ion-item>
-      
-      <ion-button type="submit" color="primary" expand="block" routerLink="/home">Iniciar sesión</ion-button>
-      <ion-button color="secondary" expand="block" routerLink="/home">Volver</ion-button>
 
+      <ion-button type="submit" color="primary" expand="block" [disabled]="!persona.valid">Ingresar</ion-button>
+      <ion-button color="secondary" expand="block" routerLink="/home">Volver</ion-button>
     </form>
   </div>
+</ion-content>

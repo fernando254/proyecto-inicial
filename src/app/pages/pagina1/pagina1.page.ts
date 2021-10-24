@@ -46,7 +46,7 @@ export class Pagina1Page implements OnInit {
 
     //vamos a guardar los valores en una variable llamada localstore
     localStorage.setItem('datos', JSON.stringify(this.lista_persona));
-    alert('Persona almacenada!')
+    alert('Bienvenido')
 
     this.persona.controls.elRut.setValue('');
     this.persona.controls.elNombre.setValue('');
